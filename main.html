@@ -1,0 +1,262 @@
+<!DOCTYPE html><!--Its Show the A html file code is given below -->
+<html>
+<head>
+    <title>5 Minute Idea</title>
+    <link rel="stylesheet" href="styles/style.css"><!--Linking The CSS File-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><!-- Used For Using Icons-->
+    <script src="scripts/script.js" defer></script><!-- Used For Linking JavaScript File-->
+</head>
+<body>
+    <div class="main">
+        <div class="header" style="text-align: center">
+            <center><h1 class="heading">5 MINUTE SOLUTION</h1></center>
+            
+        </div>
+
+        <div class="description">
+            <div class="head">
+            <b>Welcome to 5 Minute Solutions - Your Quick Fix for Everyday Problems!</b>
+            </div>
+             <!--Description Heading-->
+            <p class="description_test">
+                <h3>Quick Fixes for Everyday Problems!
+    At 5 Minute Idea, we provide simple, practical solutions for daily challenges. From fixing a bulb to troubleshooting tech issues, our easy guides save you time and effort.
+    Smart Solutions, Quick Fixes!
+    No need for expert help—our easy-to-follow tips save you time, effort, and money.
+
+    Start exploring and make life simpler, one fix at a time!</h3>
+            </p>
+        </div>
+
+        <dialog id="ideaDialog">
+            <div class="dialog-content">
+                <button class="close-btn" onclick="closeDialog()">&times;</button><!-- &times is used to bring the X mark into the codegf-->
+                <h2 id="dialogTitle">Idea Details</h2>
+                <div id="dialogContent">
+                    <!-- Content will be inserted here dynamically -->
+                </div>
+            </div>
+        </dialog>
+
+        <div class="Button">
+            <div class="btn-container">
+                <!-- For creating buttons and the content shown alongside them-->
+                <button class="btn" onclick="showIdea('slowstartup')">
+                    <i class="fas fa-lightbulb fa-2xl" style="color: #f5c518;"></i>
+                    <h3>Slow Startup</h3>
+                    <p>Easy Solution To Make Your PC Fast</p>
+                </button>
+                
+                <button class="btn" onclick="showIdea('unclogDrain')">
+                    <i class="fas fa-lightbulb fa-2xl" style="color: #f5c518;"></i>
+                    <h3>Unclog Drain</h3>
+                    <p>Chemical-free drain solution</p>
+                </button>
+                
+                <button class="btn" onclick="showIdea('lightbulb')">
+                    <i class="fas fa-lightbulb fa-2xl" style="color: #f5c518;"></i>
+                    <h3>Replacing a light bulb</h3>
+                    <p>Replacing a light bulb Easily</p>
+                </button>
+                
+                <button class="btn" onclick="showIdea('doorknob')">
+                    <i class="fas fa-lightbulb fa-2xl" style="color: #f5c518;"></i>
+                    <h3>Replacing a doorknob</h3>
+                    <p>Replace with ease, open with pleasure.</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none"><!--It hides the entire contents  in between the div tag so it doesnt pop on startup-->
+        <div id="slowstartup" class="idea-container">
+            <div class="step-sidebar">
+                <ul class="step-list">
+                    <li class="active" onclick="showStep(0, 'slowstartup')">Step 1: Check Startup Programs</li>
+                    <li onclick="showStep(1, 'slowstartup')">Step 2: Disk Cleanup</li>
+                    <li onclick="showStep(2, 'slowstartup')">Step 3: Defragment Hard Drive (HDD)</li>
+                    <li onclick="showStep(3, 'slowstartup')">Step 4: Update Drivers</li>
+                    <li onclick="showStep(4, 'slowstartup')">Step 5: Check for Malware</li>
+                </ul>
+            </div>
+            <div class="idea-content"><!-- Its is fixed for all the steps-->
+                <h3>Fast boot, easy route.</h3>
+                <div class="step-content active" data-step="0"><!-- Shows only the content that is active-->
+                    <strong>Step 1: Check Startup Programs</strong>
+                    <p>Too many programs launching on startup can slow things down. Disable unnecessary ones.</p>
+                    <ul>
+                        <li>Task Manager (Ctrl + Shift + Esc) > Startup tab</li>
+                    </ul>
+                </div>
+                <div class="step-content" data-step="1">
+                    <strong>Step 2: Disk Cleanup</strong>
+                    <p>Remove temporary files and system clutter to free up space.</p>
+                    <ul>
+                        <li>Disk Cleanup tool</li>
+                    </ul>
+                </div>
+                <div class="step-content" data-step="2">
+                    <strong>Step 3: Defragment Hard Drive (HDD)</strong>
+                    <p>If you have an HDD, defragment it to improve performance. (Skip for SSDs)</p>
+                    <ul>
+                        <li>Defragment and Optimize Drives tool</li>
+                    </ul>
+                </div>
+                 <div class="step-content" data-step="3">
+                    <strong>Step 4: Update Drivers</strong>
+                    <p>Outdated drivers can cause performance issues. Update your graphics, chipset, and other drivers.</p>
+                    <ul>
+                        <li>Device Manager or manufacturer's website</li>
+                    </ul>
+                </div>
+                <div class="step-content" data-step="4">
+                    <strong>Step 5: Check for Malware</strong>
+                    <p>Malware can significantly slow down your computer. Run a full system scan with antivirus/anti-malware software.</p>
+                    <ul>
+                        <li>Use a reputable antivirus program.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="unclogDrain" class="idea-container">
+            <div class="step-sidebar">
+                <ul class="step-list">
+                    <li class="active" onclick="showStep(0, 'unclogDrain')">Materials Needed</li>
+                    <li onclick="showStep(1, 'unclogDrain')">Step 1: Pour baking soda</li>
+                    <li onclick="showStep(2, 'unclogDrain')">Step 2: Add vinegar</li>
+                    <li onclick="showStep(3, 'unclogDrain')">Step 3: Let it bubble</li>
+                    <li onclick="showStep(4, 'unclogDrain')">Step 4: Flush with water</li>
+                    <li onclick="showStep(5, 'unclogDrain')">Pro Tip</li>
+                </ul>
+            </div>
+            <div class="idea-content">
+                <h3>Unclog a Drain Naturally</h3>
+                
+                <div class="step-content active" data-step="0">
+                    <div class="materials">
+                        <strong>You'll Need:</strong>
+                        <ul>
+                            <li>½ cup baking soda</li>
+                            <li>½ cup vinegar</li>
+                            <li>Boiling water</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-content" data-step="1">
+                    <strong>Step 1:</strong> Pour baking soda down the drain.
+                </div>
+                
+                <div class="step-content" data-step="2">
+                    <strong>Step 2:</strong> Slowly add vinegar - it will fizz!
+                </div>
+                
+                <div class="step-content" data-step="3">
+                    <strong>Step 3:</strong> Wait 15 minutes while it works.
+                </div>
+                
+                <div class="step-content" data-step="4">
+                    <strong>Step 4:</strong> Flush with boiling water.
+                </div>
+                
+                <div class="step-content" data-step="5">
+                        <strong>Pro Tip:</strong> For tough clogs, repeat the process twice and use a plunger gently after pouring the boiling water.
+                </div>
+            </div>
+        </div>
+
+        <div id="lightbulb" class="idea-container">
+            <div class="step-sidebar">
+                <ul class="step-list">
+                    <li class="active" onclick="showStep(0, 'lightbulb')">Quick Tips</li>
+                    <li onclick="showStep(1, 'lightbulb')">Step 1: Turn off the power:</li>
+                    <li onclick="showStep(2, 'lightbulb')">Step 2:Wait for the bulb to cool</li>
+                    <li onclick="showStep(3, 'lightbulb')">Step 3: Remove the bulb</li>
+                    <li onclick="showStep(4, 'lightbulb')">Step 4: Put the new bulb in</li>
+                    <li onclick="showStep(5, 'lightbulb')">Step 5:Safely dispose of the bulb </li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="idea-content">
+                <h3>Replace Bulb With Ease</h3>
+                
+                <div class="step-content active" data-step="0">
+                        <strong>Quick Start:</strong>
+                        <ul>
+                            <li>Check the Power Supply</li>
+                            <li>Circuit Breaker/Fuse:</li>
+                            <li>Damaged Socket</li>
+                        </ul>
+                </div>
+                
+                <div class="step-content" data-step="1">
+                    <strong>Step 1:</strong> While not everybody follows this step, its the safest way to avoid electrical shock or injury risk
+                </div>
+                
+                <div class="step-content" data-step="2">
+                    <strong>Step 2:</strong> If the bulb was recently on, it may be hot. Allow it to cool down completely before touching it to avoid burns.
+                    If your light bulb is incandescent or halogen, it may be too hot to touch safely with your bare hands. 
+                </div>
+                
+                <div class="step-content" data-step="3">
+                    <strong>Step 3:</strong> In most cases, simply twist the bulb counter-clockwise until its released. If it doesnt twist easily, use thick gloves or a tool to grip it.
+                </div>
+                
+                <div class="step-content" data-step="4">
+                    <strong>Step 4:</strong> Double-check the sockets wattage rating before installing the new lightbulb. If its equal to or below the maximum amount, carefully twist the bulb into place.
+                     It should turn easily dont try to force it if it doesnt fit properly. You may need to try a different shape or size.
+                </div>
+                
+                <div class="step-content" data-step="5">
+                        <strong>Step 5:</strong><ul><li>Properly dispose of the bulb, as some bulbs cant go into the trash.</li>
+                        <li>Incandescent and halogen bulbs can technically go in the trash.</li>
+                    <li>However, as theyre made of glass that could injure a sanitation worker, its recommended that they be wrapped in newspaper or cardboard.</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="doorknob" class="idea-container">
+            <div class="step-sidebar">
+                <ul class="step-list">
+                    <li class="active"  onclick="showStep(0, 'doorknob')">Step 1:Latch Installation</li>
+                    <li onclick="showStep(1, 'doorknob')">Step 2: Door Knob Attachment</li>
+                    <li onclick="showStep(2, 'doorknob')">Step 3:Final Touches and Tests</li>
+                </ul>
+            </div>
+            <div class="idea-content">
+                <h3>New knob, smooth open</h3>
+                <div class="step-content active" data-step="0">
+                    <strong>Step 1:</strong>
+                        <ul>
+                            <li> Remove the old door knob, latch, and strike plate.</li>
+                            <li>  Install a latch plate on top of the latch</li>
+                            <li> Slide the latch inside the edge of the door</li>
+                            <li> Use a wooden block and a hammer to tap the latch into place.</li>
+                            <li> Secure the latch into the door with 2 screws.</li>
+                        </ul> 
+                </div>         
+                     <div class="step-content" data-step="1">
+                      <strong>Step 2:</strong>
+                        <ul>
+                         <li>Secure the first half of the doorknob in through the latch</li>
+                         <li>Align the other half of the door knob with the first one</li>
+                         <li> Push the two sides of the door knob together</li>
+                         <li> Attach both door ends with screws</li>
+                      </ul>
+                       </div>
+                <div class="step-content" data-step="2">
+                    <strong>Step 3:</strong>
+                    <ul>
+                        <li> Use wood putty to secure any loose screws</li>
+                        <li> Screw in the new strike plate</li>
+                        <li>Test the door knob to make sure it works</li>
+                        <li> Refinish or repaint the area around the door knob, if needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
